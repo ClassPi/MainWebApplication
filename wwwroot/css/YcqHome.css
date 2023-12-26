@@ -1,0 +1,200 @@
+﻿* {
+    --main-color: #6777ef;
+    --border-color: #e4e6fc;
+}
+
+body {
+    background-color: #f4f6f9
+}
+/*隐藏input：check的默认样式，使用custom-checkbox替换它（伪类选择器，使用在label上）*/
+input[type="checkbox"] {
+    visibility: hidden;
+    display: none;
+}
+input[type="password"]::-ms-reveal {
+    display: none;
+}
+
+/*设置h4标题为粗体*/
+h4 {
+    font-weight: 700;
+}
+/*label标签的默认样式*/
+label {
+    font-weight: 600;
+    color: #34395e;
+    font-size: 12px;
+    letter-spacing: .5px;
+    user-select: none;
+}
+/*去除a标签下划线*/
+a {
+    text-decoration: none;
+}
+/*为被选中的card添加上边框颜色*/
+.card.card-primary {
+    border-top: 2px solid var(--main-color);
+}
+/*小字符*/
+.text-small {
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.card {
+    box-shadow: 0 0 5px rgba(0, 0, 0, .1);
+    transition: height .3s ease-in-out;
+}
+
+.card {
+    border: none;
+}
+    /*card中的header的最小高度*/
+    .card .card-header {
+        display: flex;
+        border-bottom: none;
+        background-color: white;
+        min-height: 70px;
+        align-items: center;
+    }
+    /*card中的body的内边距*/
+    .card .card-body {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    /*card中的header的基本样式*/
+    .card .card-header h4 {
+        font-size: 16px;
+        line-height: 28px;
+        color: var(--main-color);
+        padding-right: 10px;
+        margin-bottom: 0;
+    }
+
+/*表单中的表单行（内含label:form-label，input:form-control等）*/
+.form-group {
+    padding-top: 1.5rem;
+}
+
+    .form-group .form-control {
+        border-color: #e4e6fc;
+        background-color: #e8f0fe
+    }
+
+        .form-group .form-control:focus {
+            border-color: #e4e6fc;
+            box-shadow: 0 0 0 0.1rem #969ee1;
+        }
+/*自定义单选框样式，伪类选择器*/
+.custom-checkbox {
+    font-size: 15px;
+    color: gray;
+}
+
+    .custom-checkbox:before {
+        content: "";
+        margin-right: 5px;
+        margin-bottom: 2px;
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        border: 1px solid gray;
+        border-radius: 4px;
+        vertical-align: middle;
+        transition: background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    }
+
+input[type="checkbox"]:checked + .custom-checkbox:before {
+    content: "";
+    color: #fff;
+    background: 100%/100% no-repeat;
+    background-color: var(--main-color);
+    background-image: url('data:image/svg+xml,%3Csvg t="1693574712044" class="icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" p-id="5324" width="128" height="128"%3E%3Cpath d="M833.7 179.7l113.1 113.1-551.5 551.5L77.1 526.1 190.3 413l205.1 205.1 438.3-438.4z" fill="%23ffffff" p-id="5325"%3E%3C/path%3E%3C/svg%3E');
+    line-height: 18px;
+    box-shadow: 0 0 5px #81bcfb;
+    border: 1px solid #bfdeff;
+}
+.btn{
+    transition: all .5s;
+    
+}
+/*修改bootstrap btn-lg的样式*/
+.btn-lg {
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    height: 42px;
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+}
+/*修改bootstrap btn-primary的样式*/
+.btn-primary {
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+    box-shadow: 0 0 5px var(--main-color);
+}
+/*修改bootstrap btn-info的样式*/
+.btn-info {
+    color: white;
+    --btn-info-color: #3abaf4;
+    background-color: var(--btn-info-color);
+    border-color: var(--btn-info-color);
+    box-shadow: 0 0 5px var(--btn-info-color);
+}
+
+    .btn-info:hover {
+        color: white;
+    }
+/*小图标*/
+.icon-sm {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .5px;
+}
+/*增加更小一级字体*/
+.fs-7 {
+    font-size: .8rem;
+}
+
+.fs-8 {
+    font-size: .6rem;
+}
+/*修改输入框内文本*/
+.input-group-text, select.form-control:not([size]):not([multiple]), .form-control:not(.form-control-sm):not(.form-control-lg) {
+    font-size: 14px;
+    padding: 10px 15px;
+    height: 42px;
+    font-weight: 500;
+}
+
+.simple-footer {
+    font-size: 14px;
+    color: #6c757d;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+/*bootstrap中的警告div样式重写*/
+.alert-danger {
+    max-height: 42px;
+    opacity: 0;
+    transition: all .3s ease-in-out;
+}
+
+
+#loggingin-icon {
+    transition: opacity 5s ease-in-out;
+}
+
+.custom-select {
+    color: #444444;
+    border-color: var(--border-color);
+}
+.custom-select:focus{
+    outline:none;
+    border-color: var(--border-color);
+    box-shadow: 0 0 5px var(--border-color);
+}

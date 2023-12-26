@@ -1,0 +1,574 @@
+﻿* {
+    --fire-width: 48px;
+}
+
+div {
+    display: block;
+}
+
+body {
+    display: block;
+    background: radial-gradient(#280537, #4f0c38);
+    width: 100%;
+    height: 100%;
+}
+
+.icontainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ibonfire {
+    position: relative;
+    width: 300px;
+    height: 600px;
+    transform-origin: center center;
+    transform: scale(0.75);
+}
+
+.fires .fire {
+    border-radius: calc(var(--fire-width)/2) calc(var(--fire-width)/2) 0 0;
+    position: absolute;
+    transform-origin: bottom center;
+    opacity: 0.9;
+    bottom: 100px;
+    width: var(--fire-width);
+}
+
+.fire-red .fire {
+    background-color: #fe341e;
+    box-shadow: 0 0 90px 20px rgba(254, 52, 30, 0.8);
+}
+
+.fire-orange .fire {
+    background-color: #fc9f11;
+    box-shadow: 0 0 90px 20px rgba(252, 159, 17, 0.5);
+}
+
+.fire-yellow .fire {
+    background-color: #ffeb6e;
+    box-shadow: 0 0 90px 15px rgba(255, 235, 110, 0.5);
+}
+
+.fire-white .fire {
+    background-color: #ffffff;
+    box-shadow: 0 0 90px 15px rgba(255, 255, 255, 0.5);
+}
+
+
+
+.fire-red .fire:nth-child(1) {
+    left: calc(var(--fire-width)*0);
+    height: 190px;
+    animation: fire-animation 2s 0.15s ease-in-out infinite;
+}
+
+.fire-red .fire:nth-child(2) {
+    left: calc(var(--fire-width)*1);
+    height: 250px;
+    animation: fire-animation 2s 0.35s ease-in-out infinite;
+}
+
+.fire-red .fire:nth-child(3) {
+    left: calc(var(--fire-width)*2);
+    height: 300px;
+    animation: fire-animation 2s 0.45s ease-in-out infinite;
+}
+
+.fire-red .fire:nth-child(4) {
+    left: calc(var(--fire-width)*3);
+    height: 340px;
+    animation: fire-animation 2s 0.55s ease-in-out infinite;
+}
+
+.fire-red .fire:nth-child(5) {
+    left: calc(var(--fire-width)*4);
+    height: 310px;
+    animation: fire-animation 2s 0.40s ease-in-out infinite;
+}
+
+.fire-red .fire:nth-child(6) {
+    left: calc(var(--fire-width)*5);
+    height: 260px;
+    animation: fire-animation 2s 0.30s ease-in-out infinite;
+}
+
+.fire-red .fire:nth-child(7) {
+    left: calc(var(--fire-width)*6);
+    height: 200px;
+    animation: fire-animation 2s 0.1s ease-in-out infinite;
+}
+
+
+.fire-orange .fire:nth-child(1) {
+    left: calc(var(--fire-width)*0);
+    height: 158px;
+    animation: fire-animation 2s 0.18s ease-in-out infinite;
+}
+
+.fire-orange .fire:nth-child(2) {
+    left: calc(var(--fire-width)*1);
+    height: 207px;
+    animation: fire-animation 2s 0.38s ease-in-out infinite;
+}
+
+.fire-orange .fire:nth-child(3) {
+    left: calc(var(--fire-width)*2);
+    height: 249px;
+    animation: fire-animation 2s 0.48s ease-in-out infinite;
+}
+
+.fire-orange .fire:nth-child(4) {
+    left: calc(var(--fire-width)*3);
+    height: 290px;
+    animation: fire-animation 2s 0.58s ease-in-out infinite;
+}
+
+.fire-orange .fire:nth-child(5) {
+    left: calc(var(--fire-width)*4);
+    height: 257px;
+    animation: fire-animation 2s 0.43s ease-in-out infinite;
+}
+
+.fire-orange .fire:nth-child(6) {
+    left: calc(var(--fire-width)*5);
+    height: 208px;
+    animation: fire-animation 2s 0.33s ease-in-out infinite;
+}
+
+.fire-orange .fire:nth-child(7) {
+    left: calc(var(--fire-width)*6);
+    height: 160px;
+    animation: fire-animation 2s 0.13s ease-in-out infinite;
+}
+
+.fire-yellow .fire:nth-child(1) {
+    left: calc(var(--fire-width)*0);
+    height: 0px;
+    animation: fire-animation 2s 0.21s ease-in-out infinite;
+}
+
+.fire-yellow .fire:nth-child(2) {
+    left: calc(var(--fire-width)*1);
+    height: 125px;
+    animation: fire-animation 2s 0.41s ease-in-out infinite;
+}
+
+.fire-yellow .fire:nth-child(3) {
+    left: calc(var(--fire-width)*2);
+    height: 174px;
+    animation: fire-animation 2s 0.51s ease-in-out infinite;
+}
+
+.fire-yellow .fire:nth-child(4) {
+    left: calc(var(--fire-width)*3);
+    height: 210px;
+    animation: fire-animation 2s 0.61s ease-in-out infinite;
+}
+
+.fire-yellow .fire:nth-child(5) {
+    left: calc(var(--fire-width)*4);
+    height: 180px;
+    animation: fire-animation 2s 0.46s ease-in-out infinite;
+}
+
+.fire-yellow .fire:nth-child(6) {
+    left: calc(var(--fire-width)*5);
+    height: 196px;
+    animation: fire-animation 2s 0.36s ease-in-out infinite;
+}
+
+.fire-yellow .fire:nth-child(7) {
+    left: calc(var(--fire-width)*6);
+    height: 0px;
+    animation: fire-animation 2s 0.16s ease-in-out infinite;
+}
+
+
+.fire-white .fire:nth-child(1) {
+    left: calc(var(--fire-width)*0 + 30px);
+    width: 40px;
+    height: 100px;
+    animation: fire-animation 2s 0.75s ease-in-out infinite;
+}
+
+.fire-white .fire:nth-child(2) {
+    left: calc(var(--fire-width)*1 + 16px);
+    height: 120px;
+    animation: fire-animation 2s 0.83s ease-in-out infinite;
+}
+
+.fire-white .fire:nth-child(3) {
+    left: calc(var(--fire-width)*2);
+    height: 150px;
+    animation: fire-animation 2s 1.15s ease-in-out infinite;
+}
+
+.fire-white .fire:nth-child(4) {
+    left: calc(var(--fire-width)*3 - 5px);
+    height: 170px;
+    animation: fire-animation 2s 1.42s ease-in-out infinite;
+}
+
+.fire-white .fire:nth-child(5) {
+    left: calc(var(--fire-width)*4 - 10px);
+    height: 150px;
+    animation: fire-animation 2s 1.6s ease-in-out infinite;
+}
+
+.fire-white .fire:nth-child(6) {
+    left: calc(var(--fire-width)*5 - 15px);
+    height: 129px;
+    animation: fire-animation 2s 1.76s ease-in-out infinite;
+}
+
+.fire-white .fire:nth-child(7) {
+    left: calc(var(--fire-width)*6 - 20px);
+    width: 40px;
+    height: 110px;
+    animation: fire-animation 2s 1.96s ease-in-out infinite;
+}
+
+@keyframes fire-animation {
+    0% {
+        transform: scaleY(1)
+    }
+
+    20% {
+        transform: scaleY(0.7)
+    }
+
+    25% {
+        transform: scaleY(0.8)
+    }
+
+    40% {
+        transform: scaleY(0.6)
+    }
+
+    60% {
+        transform: scaleY(0.95)
+    }
+
+    80% {
+        transform: scaleY(0.6)
+    }
+
+    100% {
+        transform: scaleY(1)
+    }
+}
+
+
+
+.stick {
+    position: absolute;
+    width: 20px;
+    height: 60px;
+    background-color: #781e20;
+    border-radius: 10px 10px 9px 9px;
+    transform-origin: center center;
+    box-shadow: 0 0 2px 1px rgba(0,0,0,0.15);
+}
+
+    .stick:before {
+        position: absolute;
+        top: -3px;
+        content: '';
+        display: block;
+        background-color: rgb(194, 96, 80);
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        transform-origin: center center;
+        transform: rotateX(-30deg);
+    }
+
+    .stick:after {
+        position: absolute;
+        top: 27px;
+        content: '';
+        display: block;
+        background-color: #781e20;
+        transform: rotateZ(-45deg);
+        width: 5px;
+        height: 30px;
+        border-radius: 2.5px 2.5px;
+    }
+
+    .stick:nth-child(1) {
+        top: 400px;
+        left: 270px;
+        transform: rotateZ(160deg) rotateY(190deg)
+    }
+
+    .stick:nth-child(2) {
+        top: 503px;
+        left: 50px;
+        transform: rotateZ(105deg)
+    }
+
+    .stick:nth-child(3) {
+        top: 380px;
+        left: 40px;
+        transform: rotateZ(-60deg);
+    }
+
+        .stick:nth-child(3)::after {
+            position: absolute;
+            top: 5px;
+            left: 17px;
+            content: '';
+            display: block;
+            transform: rotateZ(45deg);
+            width: 5px;
+            height: 30px;
+            border-radius: 2.5px 2.5px;
+        }
+
+    .stick:nth-child(4) {
+        top: 500px;
+        left: 280px;
+        transform: rotateZ(-130deg);
+        overflow: hidden;
+    }
+
+.wood {
+    position: absolute;
+    box-shadow: 0 0 2px 1px rgba(0,0,0,0.15);
+    transform-origin: center center;
+}
+
+.wood {
+    top: 30px;
+    right: 200px;
+    background-color: rgb(120, 30, 32);
+    width: 70px;
+    height: 180px;
+    border-radius: 30px 30px 30px 30px;
+    overflow: hidden;
+}
+
+
+    .wood:before {
+        position: absolute;
+        transform-origin: center center;
+        content: '';
+        display: block;
+        background: #b35050;
+        width: 70px;
+        height: 70px;
+        top: -12px;
+        border-radius: 35px;
+        transform: rotateX(50deg);
+        box-shadow: inset 0 0 0 8px #b35050,inset 0 0 0 11px #781e20, inset 0 0 0 20px #b35050, inset 0 0 0 23px #781e20, inset 0 0 0 28px #b35050, inset 0 0 0 30px #781e20;
+    }
+
+    .wood .line {
+        position: absolute;
+        width: 2px;
+        background-color: #b35050;
+    }
+
+        .wood .line:nth-child(1) {
+            height: 20px;
+            top: 55px;
+            left: 55px;
+        }
+
+        .wood .line:nth-child(2) {
+            height: 40px;
+            top: 80px;
+            left: 55px;
+        }
+
+        .wood .line:nth-child(3) {
+            height: 40px;
+            top: 125px;
+            left: 55px;
+        }
+
+        .wood .line:nth-child(4) {
+            height: 20px;
+            top: 153px;
+            left: 42px;
+        }
+
+        .wood .line:nth-child(5) {
+            height: 48px;
+            top: 100px;
+            left: 42px;
+        }
+
+        .wood .line:nth-child(6) {
+            height: 48px;
+            top: 48px;
+            left: 42px;
+        }
+
+        .wood .line:nth-child(7) {
+            height: 180px;
+            top: 48px;
+            left: 30px;
+        }
+
+        .wood .line:nth-child(8) {
+            height: 40px;
+            top: 80px;
+            left: 20px;
+        }
+
+        .wood .line:nth-child(9) {
+            height: 40px;
+            top: 130px;
+            left: 20px;
+        }
+
+        .wood .line:nth-child(10) {
+            height: 80px;
+            top: 70px;
+            left: 10px;
+        }
+
+.woods .wood:nth-child(1) {
+    z-index: -1;
+    top: 360px;
+    left: 25px;
+    transform: rotateZ(-100deg) scaleY(1.2);
+}
+
+.woods .wood:nth-child(2) {
+    z-index: 2;
+    top: 360px;
+    left: 40px;
+    transform: rotateZ(60deg) scaleY(1.0);
+}
+
+.woods .wood:nth-child(3) {
+    z-index: 1;
+    top: 340px;
+    left: 80px;
+    transform: rotateZ(25deg) scaleY(1.0);
+}
+
+.woods .wood:nth-child(4) {
+    z-index: 2;
+    top: 380px;
+    left: 150px;
+    transform: rotate(-120deg) scaleY(1.0)
+}
+
+.woods .wood:nth-child(5) {
+    z-index: 2;
+    top: 370px;
+    left: 170px;
+    transform: rotate(-220deg) scaleY(1.0)
+}
+
+.woods .wood:nth-child(6) {
+    z-index: 2;
+    top: 370px;
+    left: 230px;
+    transform: rotate(-60deg) scaleY(1.1)
+}
+
+.woods .wood:nth-child(7) {
+    z-index: 1;
+    top: 380px;
+    left: 250px;
+    transform: rotate(-120deg) scaleY(1.0)
+}
+
+.flasks .flask {
+    position: absolute;
+    transform-origin: bottom center;
+    width: 6px;
+    height: 25px;
+    transform:scaleY(0)
+}
+
+    .flasks .flask:nth-child(1) {
+        bottom: 250px;
+        left: 21px;
+        border-radius: 3px;
+        background-color: white;
+        animation:flask-animation 2s ease 0s infinite;
+        
+    }
+    
+    .flasks .flask:nth-child(2) {
+        bottom: 320px;
+        left: 64px;
+        border-radius: 3px;
+        background-color: white;
+        animation: flask-animation 2s ease 0.8s infinite;
+    }
+    .flasks .flask:nth-child(3) {
+        bottom: 370px;
+        left: 115px;
+        border-radius: 3px;
+        background-color: white;
+        animation: flask-animation 2s ease 1.5s infinite;
+    }
+    .flasks .flask:nth-child(4) {
+        bottom: 350px;
+        left: 140px;
+        border-radius: 3px;
+        background-color: white;
+        animation: flask-animation 2s ease 1s infinite;
+    }
+    .flasks .flask:nth-child(5) {
+        bottom: 420px;
+        left: 170px;
+        border-radius: 3px;
+        background-color: white;
+        animation: flask-animation 2s ease 0.3s infinite;
+    }
+    .flasks .flask:nth-child(6) {
+        bottom: 370px;
+        left: 220px;
+        border-radius: 3px;
+        background-color: white;
+        animation: flask-animation 2s ease 0.5s infinite;
+    }
+    .flasks .flask:nth-child(7) {
+        bottom: 300px;
+        left: 260px;
+        border-radius: 3px;
+        background-color: white;
+        animation: flask-animation 2s ease 1.5s infinite;
+    }
+    .flasks .flask:nth-child(8) {
+        bottom: 220px;
+        left: 311px;
+        border-radius: 3px;
+        background-color: white;
+        animation: flask-animation 2s ease 0.2s infinite;
+    }
+    .flasks .flask:nth-child(9) {
+        bottom: 250px;
+        left: 280px;
+        border-radius: 3px;
+        background-color: white;
+        animation: flask-animation 2s ease 0.8s infinite;
+    }
+@keyframes flask-animation {
+    0% {
+        transform: scaleY(0) translateY(0px);
+        opacity: 0
+    }
+    85% {
+        transform: scaleY(0) translateY(0px);
+    }
+    95% {
+        transform: scaleY(1) translateY(-15px);
+        opacity: 1
+    }
+    100% {
+        transform: translateY(-15px);
+        opacity: 0
+    }
+}

@@ -1,0 +1,123 @@
+﻿@{
+    ViewData["Title"] = "登录 --星雨落";
+    Layout = null;
+    //q:what is sidebar-gone`s work in bootstrap5?a:it is a class to hide the sidebar
+    //q:what is col-5`s work in bootstrap5? a:it is a class to set the width of the element
+    //q:how to use needs-validation? a:it is a class to validate the form
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    
+    <link rel="stylesheet" href="~/css/YcqHome.css" asp-append-version="true" />
+    <title>@ViewData["Title"]</title>
+</head>
+<body class="sidebar-gone">
+    <div id="app">
+        <section class="section">
+            <div class="container mt-5">
+                <div class="row">
+                    <div class="col-12 col-sm-8 col-md-6 col-lg-6 col-xl-4 offset-sm-2  offset-md-3  offset-lg-3  offset-xl-4">
+
+                        <div class="card card-primary">
+                            <div class="padding-set ps-2 pe-2">
+                                <div class="card-header">
+                                    <h4>登录</h4>
+                                </div>
+                                <!--create a login form-->
+                                <form class="needs-validation" method="post">
+                                    @Html.AntiForgeryToken()
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="form-group login-form-item">
+                                                <label class="form-label" for="email">邮箱</label>
+                                                <!--
+                                                name 属性是用于指定输入元素的名称，它会在表单提交时作为参数传递给服务器，以便服务器可以识别不同的输入值。
+                                                name=“email” 表示该输入元素的名称是 email ，服务器可以通过 email 参数来获取用户输入的电子邮件地址。
+                                                tabindex 属性是用于指定输入元素在键盘导航时的顺序，它是一个整数值，表示该元素在文档中的位置。
+                                                tabindex=“1” 表示该输入元素是第一个可以通过 Tab 键访问的元素。
+                                                required 属性是用于指定输入元素是否必填，它是一个布尔值，如果存在，则表示用户必须在该元素中输入有效的值才能提交表单。
+                                                required 属性会在表单提交前触发约束验证，并在无效时显示错误提示。
+                                                autofocus 属性是用于指定输入元素是否在页面加载时自动获得焦点，它是一个布尔值，如果存在，则表示用户可以在该元素中立即开始输入，而不需要点击或切换到该元素。
+                                                autofocus 属性只能在一个表单中使用一次，如果有多个，则只有第一个会生效
+                                                -->
+                                                <input id="useremail" type="email" class="form-control" name="email" tabindex="1" autocomplete="off" pattern="^(.+)@@(.+)\.(com|net|org|cn)$" autofocus required>
+                                                <div class="invalid-feedback">请输入正确的邮箱</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="form-group login-form-item">
+                                                <label for="password">密码</label>
+                                                <div class="float-end">
+                                                    <a href="/password/reset" class="text-small">
+                                                        忘记密码？
+                                                    </a>
+                                                </div>
+                                                <input id="passwd" type="password" class="form-control" name="password" tabindex="2" pattern="^(?![\d]+$)(?![a-zA-Z]+$)(?![^\da-zA-Z]+$).{6,20}$" required>
+                                                <div class="invalid-feedback">请输入规范密码(至少包含字母数字)</div>
+                                            </div>
+                                        </div>
+                                        <!--
+                                        <div class="row">
+                                            <div class="form-group col-12">
+                                                <div id="robot" style="width:304px"></div>
+                                                <div class="invalid-feedback" id="robot-invalid">请完成验证</div>
+                                            </div>
+                                        </div>
+                                        -->
+
+                                        <div class="row">
+                                            <div class="form-group login-form-item">
+                                                <div>
+                                                    <input type="checkbox" id="rememberMe" tabindex="3" />
+                                                    <label for="rememberMe" class="align-middle custom-checkbox fw-light">记住我</label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div id="login-button1" class="form-group login-form-item align-items-center">
+                                            <button class="btn btn-primary btn-lg btn-block" tabindex="4" id="loginButton" type="submit">
+                                                登录
+                                            </button>
+                                        </div>
+
+                                        <!--
+                                         <div class="text-muted fw-bold text-center mt-3 mb-0 fs-8">
+                                              或
+                                          </div>
+
+                                          <div id="login-button2" class="form-group login-form-item ">
+                                              <button class="btn btn-info btn-lg btn-block " tabindex="4">
+                                                  <i class="bi bi-windows icon-sm"></i>
+                                                  使用Microsoft登录
+                                              </button>
+                                          </div>
+                                          -->
+
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="mt-5 text-muted text-center fs-7">还没有账号?🤣👉<a href="/auth/register">马上注册!</a></div>
+                        <div class="simple-footer">
+                            登录时遇到问题？邮箱联系管理员：<br>keaixiaosixong@gmail.com
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <!--<script src="https://www.recaptcha.net/recaptcha/api.js?onload=onloadCallback&render=explicit" async></script>-->
+    <script src="~/js/login.js" asp-append-version="true"></script>
+    <script src="~/js/inputValid.js" asp-append-version="true"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!--<script src="~/js/recaptcha.js" asp-append-version="true" defer></script>-->
+</body>
+</html>
