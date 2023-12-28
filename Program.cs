@@ -47,10 +47,6 @@ public class Program
                      var isExists = context.Request.Headers.TryGetValue("Authorization", out var token);
                      if (!isExists)
                      {
-                         using (var stream = new StreamWriter(File.OpenWrite("log.txt")))
-                         {
-                             stream.WriteLine("on no");
-                         }
                          return Task.CompletedTask;
                      }
                      var tokenString = token.ToString();
@@ -84,7 +80,7 @@ public class Program
         app.UseStaticFiles();
 
         app.UseRouting();
-        
+
         app.UseAuthorization();
 
         app.MapControllerRoute(
