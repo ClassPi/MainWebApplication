@@ -38,12 +38,15 @@ $("#registerButton").on("click",function (e) {
     $("#registerButton").text("  注册中...").prepend("<span id='loadding' class='spinner-border spinner-border-sm fs-3' role='status' aria-hidden='true'></span>").addClass("disabled");
     $("#loadding").css("display", "inline-block").css("opacity", "1").removeClass("d-none opacity-0");;
     $.ajax({
-        url: "http://localhost:5122/user/register", // 请求地址
+        url: "http://localhost:2685/user/register", // 请求地址
         type: "POST", // 请求方式
         data: JSON.stringify({ email: email, password: password, name: name, repassword: repassword }), // 请求数据
         contentType: "application/json",
         headers: {
             "Accept": "application/json"
+        },
+        xhrFields: {
+            withCredentials: true
         },
         timeout: 5000,
         success: function (data) { // 请求成功的回调函数

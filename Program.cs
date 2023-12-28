@@ -10,10 +10,15 @@ public class Program
     public static void Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
-
+        builder.WebHost.ConfigureKestrel(options =>
+        {
+            options.ListenAnyIP(2686); // HTTP
+        });
         // Add services to the container.
         builder.Services.AddSingleton<IFileProvider>(new PhysicalFileProvider(Directory.GetCurrentDirectory()));
         builder.Services.AddControllersWithViews();
+
+        builder.Services.AddAuthorization();
         builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
          .AddJwtBearer(options =>
          {
@@ -65,24 +70,23 @@ public class Program
              };
          });
         var app = builder.Build();
-
         app.Use(async (context, next) =>
-                {
-                    if (context.Request.Cookies.TryGetValue("Authorization", out var headerToken))
-                        context.Request.Headers.Authorization = headerToken;
-                    else
-                        context.Request.Headers.Authorization = string.Empty;
-                    await next.Invoke();
-                });
-
-        app.UseAuthentication();
-        app.UseAuthorization();
+                        {
+                            if (context.Request.Cookies.TryGetValue("Authorization", out var headerToken))
+                                context.Request.Headers["Authorization"] = headerToken;
+                            else
+                                context.Request.Headers["Authorization"] = string.Empty;
+                            await next.Invoke();
+                        });
 
         app.UseHttpsRedirection();
 
         app.UseStaticFiles();
 
         app.UseRouting();
+        
+        app.UseAuthorization();
+
         app.MapControllerRoute(
             name: "default",
             pattern: "{controller=auth}/{action=login}/{id?}");

@@ -42,7 +42,7 @@ $("#loginButton").on("click",function (e) {
     $("#loginButton").text("  登录中...").prepend("<span id='loadding' class='spinner-border spinner-border-sm fs-3' role='status' aria-hidden='true'></span>").addClass("disabled");
     $("#loadding").css("display", "inline-block").css("opacity", "1").removeClass("d-none opacity-0");;
     $.ajax({
-        url: "http://localhost:5122/user/login", // 请求地址
+        url: "http://localhost:2685/user/login", // 请求地址
         type: "POST", // 请求方式
         data: JSON.stringify({ email: email, password: password, remember:true/*captcha_token: recaptchaCallback*/ }), // 请求数据
         contentType: "application/json",
