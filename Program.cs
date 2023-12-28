@@ -23,7 +23,7 @@ public class Program
                  // 是否验证颁发者
                  ValidateIssuer = true,
                  // 是否验证访问群体
-                 ValidateAudience = false,
+                 ValidateAudience = true,
                  // 是否验证生存期
                  ValidateLifetime = true,
                  // 验证Token的时间偏移量
